@@ -1,0 +1,40 @@
+data:
+  data_dir: "C:/Users/user/Documents/freelance/independent_projects/agri_assign_sola/Agri-Assignment_01/PASTIS_subset"
+  s2_dir: "DATA_S2"
+  ann_dir: "ANNOTATIONS"
+  metadata_file: "metadata.geojson"
+
+splits:
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  random_state: 35
+
+sampling:
+  max_patches: 30
+  pixels_per_patch: 1000
+
+model:
+  type: "lightgbm"
+  params:
+    n_estimators: 500        # 200 → 500 (more trees)
+    learning_rate: 0.03      # 0.05 → 0.03 (slower learning)
+    max_depth: 12            # 8 → 12 (deeper trees)
+    num_leaves: 63           # 31 → 63 (more complex)
+    class_weight: "balanced"
+    subsample: 0.8
+    colsample_bytree: 0.8
+    random_state: 42
+    n_jobs: -1
+
+spatial_smoothing:
+  window_size: 5
+
+outputs:
+  figures_dir: "outputs/figures"
+  metrics_dir: "outputs/metrics"
+  predictions_dir: "outputs/predictions"
+  splits_dir: "splits"
+
+params:
+  verbosity: -1  # Suppresses all warnings
