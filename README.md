@@ -88,3 +88,7 @@ src/train.py	                            LightGBM training
 configs/config.yaml	                        All configurable parameters
 report.md	                                Full analysis and results
 ```
+
+## Additional Information
+
+For detailed analysis, results interpretation, and methodology, please refer to the full report: report.md
